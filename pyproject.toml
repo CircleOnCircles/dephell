@@ -152,7 +152,7 @@ appdirs = {optional = true, version = "*"}
 bowler = {optional = true, version = "*"}
 docker = {optional = true, version = "*"}
 dockerpty = {optional = true, version = "*"}
-fissix = {allows-prereleases = true, version = "*"}
+fissix = {optional = true, allows-prereleases = true, version = "*"}
 flatdict = {optional = true, version = "*"}
 graphviz = {optional = true, version = "*"}
 html5lib = {optional = true, version = "*"}
@@ -163,7 +163,7 @@ tabulate = {optional = true, version = "*"}
 # optional
 aiofiles = {optional = true, version = "*"}
 autopep8 = {optional = true, version = "*"}
-colorama = {optional = true, version = "*"}
+colorama = {optional = true, platform = "win32", version = "*"}
 yapf = {optional = true, version = "*"}
 
 # dephell ecosystem
@@ -179,6 +179,8 @@ dephell-shells = ">=0.1.3"
 dephell-specifier = ">=0.1.7"
 dephell-venvs = ">=0.1.16"
 dephell-versioning = "*"
+fissix-py35 = "*"
+isort = {extras = ["pyproject"], version = "*"}
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
@@ -191,26 +193,9 @@ recommonmark = "*"
 pygments-github-lexers = "*"
 
 flake8-isort = "*"
-isort = {extras = ["pyproject"], version = "*"}
 # pre-commit = "*"
 
 [tool.poetry.extras]
 docs = ["alabaster", "pygments-github-lexers", "recommonmark", "sphinx"]
 tests = ["aioresponses", "pytest", "requests-mock"]
-full = [
-    "aiofiles",
-    "appdirs",
-    "autopep8",
-    "bowler",
-    "colorama",
-    "docker",
-    "dockerpty",
-    "fissix",
-    "flatdict",
-    "graphviz",
-    "html5lib",
-    "pygments",
-    "ruamel.yaml",
-    "tabulate",
-    "yapf",
-]
+full = ["aiofiles", "appdirs", "autopep8", "bowler", "colorama", "docker", "dockerpty", "fissix", "flatdict", "graphviz", "html5lib", "pygments", "ruamel-yaml", "tabulate", "yapf"]
