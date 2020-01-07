@@ -83,3 +83,14 @@ matrix:
         - poetry install -vvv
       script:
         - dephell inspect self
+
+    - name: pipenv
+      python: "3.7"
+      env: ENV=main
+      before_install:
+        - pip install pipenv
+      install:
+        - pipenv install -e .
+      script:
+        - pipenv shell
+        - dephell inspect self
